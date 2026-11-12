@@ -1,7 +1,10 @@
-from datetime import datetime, date
+from datetime import datetime, date, timezone
 from sqlalchemy import String, Text, ForeignKey, DateTime, Date
 from sqlalchemy.orm import Mapped, mapped_column, relationship
 from .database import Base
+
+def utcnow() -> datetime:
+    return datetime.now(timezone.utc)
 
 
 class User(Base):
@@ -44,6 +47,7 @@ class TaskUpdate(Base):
     created_at: Mapped[datetime] = mapped_column(DateTime, default=datetime.utcnow)
 
     task: Mapped["Task"] = relationship(back_populates="updates")
+    author: Mapped["User"] = relationship(foreign_keys=[updated_by])
 
 
 class Interview(Base):
