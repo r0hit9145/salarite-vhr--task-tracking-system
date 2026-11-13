@@ -4,4 +4,3 @@ sqlalchemy
 pydantic[email]
 pyjwt
 python-multipart
-EOF

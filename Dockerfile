@@ -11,7 +11,7 @@ FROM python:3.12-slim
 WORKDIR /app
 
 COPY backend/requirements.txt backend/requirements.txt
-RUN pip install --no-cache-dir -r backend/requirements.txt
+RUN pip install --no-cache-dir --default-timeout=100 --retries=5 -r backend/requirements.txt
 
 COPY backend/ backend/
 COPY --from=frontend /build/dist frontend/dist
