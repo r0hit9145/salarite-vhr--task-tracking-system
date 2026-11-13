@@ -1,6 +1,6 @@
 import { useAuth } from "../auth";
 
-export default function Layout({ title, children }) {
+export default function Layout({ title, right, children }) {
     const { user, logout } = useAuth();
     return (
         <div className="app">
@@ -12,7 +12,10 @@ export default function Layout({ title, children }) {
                 </div>
             </header>
             <main className="content">
-                <h2>{title}</h2>
+                <div className="page-head">
+                    <h2>{title}</h2>
+                    {right}
+                </div>
                 {children}
             </main>
         </div>
