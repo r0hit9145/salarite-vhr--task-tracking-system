@@ -61,4 +61,7 @@ class Interview(Base):
     status: Mapped[str] = mapped_column(String(20), default="scheduled")  # scheduled / completed / cancelled
     hr_id: Mapped[int] = mapped_column(ForeignKey("users.id"))
     task_id: Mapped[int | None] = mapped_column(ForeignKey("tasks.id"), nullable=True)
-    created_at: Mapped[datetime] = mapped_column(DateTime, default=datetime.utcnow)
+    created_at: Mapped[datetime] = mapped_column(DateTime, default= utcnow)
+    hr: Mapped["User"] = relationship(foreign_keys=[hr_id]) 
+
+    
