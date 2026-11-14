@@ -31,10 +31,10 @@ Each candidate moves through a hiring pipeline:
 
 ## Demo credentials
 
-| Role       | Email / Username      | Password     |
-|------------|-----------------------|--------------|
-| Employer   | `<employer_username>` | `<password>` |
-| Virtual HR | `<hr_username>`       | `<password>` |
+| Role       | Email / Username           | Password     |
+|------------|--------------------------- |--------------|
+| Employer   |`<employer@salarite.com>`-- | `<password>` |
+| Virtual HR | `<hr1@salarite.com>`       | `<password>` |
 
 These users are created by the seed script.
 
